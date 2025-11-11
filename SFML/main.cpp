@@ -1,10 +1,40 @@
 ﻿#include <SFML/Graphics.hpp>
 #include <cmath>
+#include <iostream>
+#include <sstream>
+#include <string>
 
-int main()
-{
+float input_scaling_factor() {
+    float b;
+    std::cout << "Please provide a scaling factor." << std::endl;
+    std::cout << "This is a positive floating point integer." << std::endl;
+    std::cout << "Please enter it here: " << std::endl;
+    std::cin >> b;
+
+    if (std::cin.fail() || b <= 0.f) {
+        std::cout << "Invalid input. Setting Defauly scaling to 0.5f";
+        std::cin.clear();
+        std::cin.ignore(10000, '\n');
+        b = 0.5f;
+    }
+    return b;
+}
+
+std::string build_title(float b) {
+    std::ostringstream title;
+    title << "Archimedean Spiral (b = " << b << ")";
+    std::string window_title = title.str();
+    return window_title;
+}
+
+int main() {
+
+    //generates scaling factor for spiral in layer 2
+    float b = input_scaling_factor();
+
     // Create window object and sets the frame limit to 60 FPS
-    sf::RenderWindow window(sf::VideoMode({ 750u, 750u }), "Archimedean Spiral");
+    std::string window_title = build_title(b);
+    sf::RenderWindow window(sf::VideoMode({ 750u, 750u }), window_title);
     window.setFramerateLimit(60);
 
     // Create Circle for Layer 1
@@ -13,7 +43,7 @@ int main()
     circle.setPointCount(200);
     circle.setFillColor(sf::Color::Cyan);
     circle.setOrigin(
-        sf::Vector2f{ circle.getRadius(), circle.getRadius()}
+        sf::Vector2f{ circle.getRadius(), circle.getRadius() }
     );
 
     auto size = window.getSize();
@@ -26,7 +56,6 @@ int main()
     // a = Initial radius
     // b = Pitch (growth rate)
     const float a = 0.f;
-    const float b = 5.f;
     float theta = 0.f;
     float r = 0.f;
     float x = 0.f;
