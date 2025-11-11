@@ -16,7 +16,7 @@ Below is the parametric form of the spiral that defines each point as well as so
 \left(
 x_{\text{center}} + (r * \cosθ),\;
 y_{\text{center}} + (r * \sinθ)
-\right)
+\right) \| r < (Radius of the Circle)
 ```
 ## Scaling Factor of 2
 <img width="758" height="787" alt="image" src="https://github.com/user-attachments/assets/39e30fc9-ce3a-4b60-98d4-e7aded429579" />
