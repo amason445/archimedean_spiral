@@ -64,7 +64,7 @@ int main() {
 
     // The while loop works while the Radial coordinate is less than the radius of the circle in layer 1
     // Using the formula for the radial coordinate, vectors for x and y are appended to the Vertex Array with cosine and sine
-    // You are effectively scaling sine and cosine with a constantly increading radial coordinate
+    // You are effectively scaling sine and cosine with a constantly increasing radial coordinate
     while (r < radius) {
         r = a + (b * theta);
         x = center.x + (r * std::cos(theta));
