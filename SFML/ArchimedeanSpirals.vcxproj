@@ -87,7 +87,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>E:\Libraries\SFML-3.0.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;E:\Libraries\SFML-3.0.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>SFML_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
@@ -113,7 +113,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>E:\Libraries\SFML-3.0.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;E:\Libraries\SFML-3.0.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>SFML_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
@@ -127,11 +127,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ArchimedeanSpiral.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\circle\CircleHandler.cpp" />
+    <ClCompile Include="src\spiral\ArchimedeanSpiral.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ArchimedeanSpiral.h" />
+    <ClInclude Include="include\circle\CircleHandler.h" />
+    <ClInclude Include="include\spiral\ArchimedeanSpiral.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

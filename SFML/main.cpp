@@ -3,7 +3,8 @@
 #include <sstream>
 #include <string>
 
-#include "ArchimedeanSpiral.h"
+#include "spiral/ArchimedeanSpiral.h"
+#include "circle/CircleHandler.h"
 
 float input_scaling_factor() {
     float b;
@@ -37,18 +38,13 @@ int main() {
     std::string window_title = build_title(b);
     sf::RenderWindow window(sf::VideoMode({ 750u, 750u }), window_title);
     window.setFramerateLimit(60);
-
-    // Create Circle for Layer 1
-    float radius = 250.f;
-    sf::CircleShape circle(radius);
-    circle.setPointCount(200);
-    circle.setFillColor(sf::Color::Cyan);
-    circle.setOrigin(
-        sf::Vector2f{ circle.getRadius(), circle.getRadius() }
-    );
-
     auto size = window.getSize();
     sf::Vector2f center{ (static_cast<float>(size.x) / 2.f), (static_cast<float>(size.x) / 2.f) };
+
+    // Create Circle to place spiral on
+    float radius = 250.f;
+    CircleHandler circle(radius, sf::Color::Cyan, 200);
+    circle.centerOrigin();
     circle.setPosition(center);
 
     ArchimedeanSpiral spiral(b);
@@ -62,7 +58,7 @@ int main() {
                 window.close();
         }
         window.clear();
-        window.draw(circle);
+        window.draw(circle.shape());
         window.draw(spiral.get_vertices());
         window.display();
     }
