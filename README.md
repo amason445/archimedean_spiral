@@ -1,5 +1,15 @@
 # Acrhimedean Spiral
-This repo contains a script to plot a circle and the algorithmically fill it with an [Archimedean Spiral](https://en.wikipedia.org/wiki/Archimedean_spiral) in C++. It first calculates a radial coordinate `r = a + bθ` from the origin, an angle theta and then a scaling factor b and then fills an array of points constructed using trigonometry. The visuals are rendered using the [SFML Library](https://www.sfml-dev.org/) which places this array on the original circle. Below are some examples with different scaling factors.
+This repo contains a script to plot a circle and the algorithmically fill it with an [Archimedean Spiral](https://en.wikipedia.org/wiki/Archimedean_spiral) in C++. It first calculates a radial coordinate `r = a + bθ` from the origin, an angle theta and then a scaling factor b and then fills an array of points constructed using trigonometry. The visuals are rendered using the [SFML Library](https://www.sfml-dev.org/) which places this array on the original circle. Below are some examples with different scaling factors which are filled using the below parametric function:
+
+\[
+\mathbf{v}(\theta) =
+\left(
+x_{\text{center}} + (a + b\theta)\cos\theta,\;
+y_{\text{center}} + (a + b\theta)\sin\theta
+\right),
+\quad
+r(\theta) = a + b\theta
+\]
 
 ## Scaling Factor of 2
 <img width="758" height="787" alt="image" src="https://github.com/user-attachments/assets/39e30fc9-ce3a-4b60-98d4-e7aded429579" />
