@@ -31,7 +31,7 @@ std::string build_title(float b) {
 
 int main() {
 
-    //generates scaling factor for spiral in layer 2
+    // Generates Scaling Factor Layer 2 Spiral
     float b = input_scaling_factor();
     float radius = 250.f;
 
@@ -42,11 +42,12 @@ int main() {
     auto size = window.getSize();
     sf::Vector2f center{ (static_cast<float>(size.x) / 2.f), (static_cast<float>(size.x) / 2.f) };
 
-    // Create Circle to place spiral on
+    // Create Circle for layer 1
     CircleHandler circle(radius, sf::Color::Cyan, 200);
     circle.centerOrigin();
     circle.setPosition(center);
 
+    // Create Spiral for layer 2
     ArchimedeanSpiral spiral(b);
     spiral.construct_spiral(radius, center);
 
