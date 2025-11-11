@@ -1,6 +1,6 @@
 #include "ArchimedeanSpiral.h"
  
-ArchimedeanSpiral::ArchimedeanSpiral(float b) : b_(b), theta_(0.f) {}
+ArchimedeanSpiral::ArchimedeanSpiral(float b) : b_(b), theta_(0.f), spiral_(sf::PrimitiveType::LineStrip) {}
 
 void ArchimedeanSpiral::construct_spiral(float radius, sf::Vector2f center, float dtheta)
 {

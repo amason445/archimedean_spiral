@@ -61,7 +61,6 @@ int main() {
             if (event->is<sf::Event::Closed>())
                 window.close();
         }
-
         window.clear();
         window.draw(circle);
         window.draw(spiral.get_vertices());
