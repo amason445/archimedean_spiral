@@ -5,11 +5,11 @@ This repository contains a C++ program that plots a circle and then fills it wit
 r = a + bθ
 ```
 
-for increasing values of \(θ\) where \(a\) controls the initial radius and \(b\) controls the spacing between successive turns of the spiral. Each point in the spiral is then mapped from polar to Cartesian coordinates using trigonometric conversion, and stored in an array for rendering.
+for increasing values of \(θ\) where \(a\) controls the initial radius and the scaling factor \(b\) controls the spacing between successive turns of the spiral. Each point in the spiral is then mapped from polar to Cartesian coordinates using trigonometric conversion, and stored in an array for rendering.
 
 All graphics are drawn using the **SFML** library. The spiral is then overlaid onto the reference circle, producing a smooth and continuous fill pattern.
 
-Below is the parametric form of the spiral that defines each point:
+Below is the parametric form of the spiral that defines each point as well as some example with the scaling factor \(b\):
 
 ```math
 \mathbf{v}(\theta) =
