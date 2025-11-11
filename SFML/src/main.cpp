@@ -33,6 +33,7 @@ int main() {
 
     //generates scaling factor for spiral in layer 2
     float b = input_scaling_factor();
+    float radius = 250.f;
 
     // Create window object and sets the frame limit to 60 FPS
     std::string window_title = build_title(b);
@@ -42,7 +43,6 @@ int main() {
     sf::Vector2f center{ (static_cast<float>(size.x) / 2.f), (static_cast<float>(size.x) / 2.f) };
 
     // Create Circle to place spiral on
-    float radius = 250.f;
     CircleHandler circle(radius, sf::Color::Cyan, 200);
     circle.centerOrigin();
     circle.setPosition(center);
