@@ -14,8 +14,8 @@ Below is the parametric form of the spiral that defines each point:
 ```math
 \mathbf{v}(\theta) =
 \left(
-x_{\text{center}} + \(r * \cosθ\),\;
-y_{\text{center}} + \(r * \sinθ\)
+x_{\text{center}} + (r * \cosθ),\;
+y_{\text{center}} + (r * \sinθ)
 \right)
 ```
 ## Scaling Factor of 2
