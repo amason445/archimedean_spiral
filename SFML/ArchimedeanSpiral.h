@@ -8,7 +8,7 @@ class ArchimedeanSpiral {
 public:
     explicit ArchimedeanSpiral(float b = 0.5f);
 
-    void construct_spiral(float radius, sf::Vector2f center, float a = 0.f, float dtheta = 0.01f);
+    void construct_spiral(float radius, sf::Vector2f center, float dtheta = 0.01f);
 
     const sf::VertexArray& get_vertices() const { return spiral_; }
 

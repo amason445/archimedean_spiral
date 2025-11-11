@@ -1,8 +1,8 @@
 #include "ArchimedeanSpiral.h"
  
-ArchimedeanSpiral::ArchimedeanSpiral(float b) : a_(0.f), b_(b), theta_(0.f) {}
+ArchimedeanSpiral::ArchimedeanSpiral(float b) : b_(b), theta_(0.f) {}
 
-void ArchimedeanSpiral::construct_spiral(float radius, sf::Vector2f center, float a, float dtheta)
+void ArchimedeanSpiral::construct_spiral(float radius, sf::Vector2f center, float dtheta)
 {
     // The while loop works while the Radial coordinate is less than the radius of the circle in layer 1
     // Using the formula for the radial coordinate, vectors for x and y are appended to the Vertex Array with cosine and sine
@@ -12,7 +12,7 @@ void ArchimedeanSpiral::construct_spiral(float radius, sf::Vector2f center, floa
     float r = 0.f;
 
     while (r < radius) {
-        r = a + (b_ * theta_);
+        r = a_ + (b_ * theta_);
         float x = center.x + (r * std::cos(theta_));
         float y = center.y + (r * std::sin(theta_));
 
